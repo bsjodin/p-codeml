@@ -1,7 +1,7 @@
 
 # p-codeml
 ### Description and Installation
-p-codeml is a script for detecting positively selected genes (PSGs) using [CodeML](http://evomics.org/learning/phylogenetics/paml/) under a branch-site model. You can install this repository using the following command:
+p-codeml is a script for detecting positively selected genes (PSGs) using [CodeML](http://abacus.gene.ucl.ac.uk/software/paml.html) under a branch-site model. You can install this repository using the following command:
 
 ```$ git clone https://github.com/bsjodin/p-codeml```
 
@@ -21,7 +21,7 @@ You may need to change permissions, which can be done running the following:
 | -n [int] | **Optional**; number of threads/instances to run simultaneously, default is 1 |
   
 ### Software Requirements
-This script requires [PAML](http://evomics.org/learning/phylogenetics/paml/) is installed and in your ```$PATH``` variable. It also requires [R](https://www.r-project.org/) is installed and in your ```$PATH``` variable.
+This script requires [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html) is installed and in your ```$PATH``` variable. It also requires [R](https://www.r-project.org/) is installed and in your ```$PATH``` variable.
 
 ### Input Files and Directory Structure
 A minimum of two input files are required:
