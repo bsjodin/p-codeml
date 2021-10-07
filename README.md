@@ -27,7 +27,7 @@ This script requires [PAML](http://evomics.org/learning/phylogenetics/paml/) is 
 A minimum of two input files are required:
 
 1) A tree file in Newick format, with the foreground/background branches labeled (see [example_tree.txt](example/tree_labeled.txt)). This must be called `tree_labeled.txt` in order for the script to function correctly.
-2) Gene alignments in PAML format (see [example](example/) directory for example inputs). PAML files must have the suffix ".pml" or the program will not run correctly. For multiple genes, it is best to keep these in a seperate directory.
+2) Gene alignments in PAML format (see [example](example/input) directory for example inputs). PAML files must have the suffix ".pml" or the program will not run correctly. For multiple genes, it is best to keep these in a seperate directory.
 
 The `p-codeml.sh` script must be in your current working directory and all other scripts must be in a subdirectory called `src`. Input alignment files should be in their own subdirectory, and the labeled tree file must be in your current working directory. The control files also must be in the `src` directory (copying and pasting the `src` directory is the safest practice).
 
