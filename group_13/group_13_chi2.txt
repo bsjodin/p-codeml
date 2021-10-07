@@ -1,0 +1,8 @@
+ModelA lnL: -5429.989532
+ModelAnull lnL: -5488.025394
+Test statistic: 116.071724
+ModelA df: 21
+ModelAnull df: 20
+
+df =  1  prob = 0.000000000 = 0.000e+00
+
