@@ -1,0 +1,24 @@
+Processing group_1 (1 of 4)
+Running ModelA.
+Running ModelAnull.
+p=1.000e+00
+25.0% complete.
+
+Processing group_10 (2 of 4)
+Running ModelA.
+Running ModelAnull.
+p=3.740e-09
+50.0% complete.
+
+Processing group_11 (3 of 4)
+Running ModelA.
+Running ModelAnull.
+p=0.000e+00
+75.0% complete.
+
+Processing group_12 (4 of 4)
+Running ModelA.
+Running ModelAnull.
+p=0.000e+00
+100.0% complete.
+

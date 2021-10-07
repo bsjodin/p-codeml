@@ -1,0 +1,16 @@
+group_1 1 1
+group_10 4e-09 6.4e-08
+group_11 0 0
+group_12 0 0
+group_13 0 0
+group_14 0 0
+group_15 0.299444145 1
+group_16 0.936606175 1
+group_2 1 1
+group_3 0.996091196 1
+group_4 0.003001218 0.048019488
+group_5 0.093301508 1
+group_6 0.638105833 1
+group_7 1 1
+group_8 0.987384863 1
+group_9 1 1
