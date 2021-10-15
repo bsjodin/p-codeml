@@ -7,7 +7,7 @@ p-codeml is a script for detecting positively selected genes (PSGs) using [CodeM
 
 You may need to change permissions, which can be done running the following:
 
-```$chmod 755 p-codeml.sh ./src/*.sh ./src/*.R```
+```$ chmod 755 p-codeml.sh ./src/*.sh ./src/*.R```
 
 ### Usage and Options
 **Usage:**\
