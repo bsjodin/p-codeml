@@ -44,7 +44,7 @@ CodeML results for each gene alignment will be saved in `[output_dir]/[group_id]
 
 LRT and Χ<sup>2</sup> test results will be saved in `[output_dir]/[group_id]/[group_id]_chi2.txt`. 
 
-Corrected *p*-values and histograms will be saved in the current working directory as `pvalues-correct.txt` and `Rplots.pdf`, respectively.
+Corrected *p*-values and histograms will be saved in the current working directory as `pvalues-correct.txt` and `pvalue_plots.pdf`, respectively.
 
 A final table of all PSGs will be output to `final_table.txt` with the following headings:
  - **Group:** ID for the gene alignment file
