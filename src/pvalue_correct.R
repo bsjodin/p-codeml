@@ -1,3 +1,7 @@
+#!/usr/bin/env Rscript
+
+pdf(file="pvalue_plots.pdf")
+
 input <- read.delim("pvalues.txt", header=F, sep = " ")
 hist(input$V2,main="Uncorrected p-values",xlab="p-value",col="lightgrey")
 
