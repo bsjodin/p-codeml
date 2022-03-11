@@ -63,8 +63,8 @@ Before running all scripts, though, you must first generate a file with the name
 
 Then, the three scripts can be run as follows:
 
-`$ ./src/generate_ctl.sh [input_dir] [output_dir]`\
-`$ ./src/codeml.sh fofn.txt [output_dir] | tee codeml.log`\
+`$ ./src/generate_ctl.sh [input_dir] [output_dir] [treefile]` #using the full path names for directories/tree file is recommended\
+`$ ./src/codeml.sh fofn.txt [output_dir] | tee codeml.log` #again, use the full path name or output directory\
 `$ ./src/parse_psg.sh`
 
 **Note:** Running the `codeml.sh` script in this fashion only submits a single instance. To run multiple, open new terminal windows and re-run the command with a different `fofn.txt` file for each instance (can be renamed; example, `fofn1.txt`).
