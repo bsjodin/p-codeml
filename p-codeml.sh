@@ -2,15 +2,30 @@
 
 set -e
 
-#trap 'pkill codeml' SIGINT SIGKILL ERR exit
+function trap_actions()
+{
+if [[ ! -f "final_table.txt" ]];then
+	pkill codeml
+	echo -e "\nERROR: Program exited without completing!"
+	rm fofn.txt*
+	exit 1
+else
+	rm fofn.txt*
+	echo -e "\np-codeml successfully completed!"
+	exit 0
+fi
+}
 
-usage() { echo "Usage: $0 -i [input_dir] -o [output_dir] -n [threads]" 1>&2; exit 1; }
+trap trap_actions SIGINT ERR EXIT
+
+usage() { echo "Usage: $0 -i [input_dir] -t [tree_file] -o [output_dir] -n [threads]" 1>&2; exit 1; }
 help="p-codeml.sh is a script for automating CodeML in parallel for the branch-site model over many genes.
 
 Usage: ./p-codeml.sh -i [input_dir] -o [output_dir] -n [threads]
 
 Option        Description
 -i [string] : required; input directory containing PAML formated files (must have .pml suffix)
+-t [string] : required; path to tree file, in Newick format
 -o [string] : optional; output directory, default is 'output'
 -n [int]    : optional; number of threads/processes to run simulatenously, default is 1
 "
@@ -21,6 +36,11 @@ do
 	case $key in
 		-i) #input directory
 		input=$PWD/"$2"
+		shift;shift
+		;;
+		
+		-t) #tree file
+		tree=$PWD/"$2"
 		shift;shift
 		;;
 		
@@ -53,6 +73,11 @@ if [[ -z $input ]];then
 	usage
 fi
 
+if [[ -z $tree ]];then
+	echo "ERROR: Please specify a tree file."
+	usage
+fi
+
 if [[ -z $output ]];then
 	output=$PWD/output
 fi
@@ -65,8 +90,8 @@ fi
 basename -s .pml `ls $input` > fofn.txt
 
 #generate CTL files
-echo "Setting up directories and generating CTL files"
-./src/generate_ctl.sh $input $output
+echo "Setting up directories and generating control files"
+./src/generate_ctl.sh $input $output $tree
 
 #run codeml
 echo "Running CodeML"
@@ -96,19 +121,9 @@ else
 fi
 done
 
-#for N in $(seq 1 $threads);do
-#	echo
-#done
-
 echo -e "\nFinished running CodeML"
 
 wait
 
 #Find significant groups
 ./src/parse_psg.sh $output
-
-if [[ ! -f "final_table.txt" ]];then
-	echo -e "\nERROR: Program exited without completing!"
-else
-	rm fofn.txt*
-fi
